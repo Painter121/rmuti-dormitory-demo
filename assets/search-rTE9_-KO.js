@@ -1,0 +1,1 @@
+var e=e=>String(e??``).normalize(`NFC`).toLocaleLowerCase().replace(/\s+/gu,``),t=(t,n)=>{if(!n)return!0;let r=e(n);return!r||t.some(t=>e(t).includes(r))};export{e as n,t};

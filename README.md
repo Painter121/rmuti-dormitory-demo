@@ -1,25 +1,14 @@
-# Dormitory Repair System — Project Showcase
+# RMUTI Dormitory System — Live Interactive Showcase
 
-Public portfolio showcase for a student dormitory repair management project.
+ระบบรับแจ้งซ่อมและบริหารจัดการหอพักนักศึกษา มหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน (Interactive Live Showcase)
 
-This site is intentionally separated from the real application runtime. It combines selected real screenshots from the student-facing user guide with code-rendered representative interfaces for Student, Technician and Administrator roles.
+## เกี่ยวกับเดโมนี้
+หน้านี้เป็น Live UI & Module Showcase ของระบบงานจริง โดยแสดงผลการออกแบบ หน้าจอ ส่วนประกอบ และการตกแต่งของโมดูลต่างๆ ทั้งหมดผ่านเบราว์เซอร์:
+- **โมดูลนักศึกษา (Student)**: หน้าแดชบอร์ด, แบบฟอร์มแจ้งซ่อม, ติดตามสถานะงานซ่อมพร้อมไทม์ไลน์, ประวัติการแจ้งซ่อม, การนัดหมายช่าง
+- **โมดูลช่างซ่อม (Technician)**: ตารางงานช่าง, ปฏิทินงานซ่อม (FullCalendar), ระบบเบิก-ใช้วัสดุและอะไหล่, รายงานผลงานช่าง
+- **โมดูลผู้ดูแลระบบ (Admin / Staff)**: แดชบอร์ดสรุปสถิติ & KPI, ระบบจัดการงานซ่อมทั้งหมด, ผังห้องพักและอาคาร, จัดการข้อมูลนักศึกษาและบุคลากร, คลังอุปกรณ์และครุภัณฑ์, ข้อมูลหลัก Master Data และการบำรุงรักษาระบบ
+- **โมดูลสาธารณะ (Public)**: Landing Page, ตรวจสอบสถานะการซ่อมทั่วไป, แจ้งซ่อมพื้นที่ส่วนกลาง
 
-## Public content
+*หมายเหตุ: ข้อมูลทั้งหมดในเดโมนี้เป็นข้อมูลจำลองเพื่อการสาธิตการทำงานและนำเสนอผลงานทางด้านหน้าบ้าน (Frontend UI & Interaction) โดยไม่มีการเชื่อมต่อฐานข้อมูลหรือเซิร์ฟเวอร์จริง*
 
-- Project overview and end-to-end repair workflow
-- Student, technician and administrator role summaries
-- 16 code-rendered representative screens using fictional mock data
-- Selected real student-interface screenshots already used by the project's user guide
-- Static HTML/CSS/JavaScript only; no production API or database connection
-
-## Representative UI
-
-The code-rendered screens reuse the project's public visual language: RMUTI orange (`#d15716`), deep navy (`#0a1f35`), white/slate surfaces, clean borders, subtle shadows, compact tables and dot-based statuses. They reproduce presentation patterns and information architecture only, not private application logic.
-
-All names, request IDs, room numbers, dates, counts, stock levels, system metrics and contact details displayed in the representative screens are fictional mock data.
-
-## Privacy
-
-The real application repository remains private. This public repository does not include the production application source tree, backend, environment files, database, credentials, tokens, internal plans, production records, private runtime configuration or production API connections.
-
-Live site: https://painter121.github.io/rmuti-dormitory-demo/
+🌐 **เข้าชมเว็บไซต์**: [https://painter121.github.io/rmuti-dormitory-demo/](https://painter121.github.io/rmuti-dormitory-demo/)

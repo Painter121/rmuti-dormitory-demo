@@ -1,0 +1,1 @@
+var e=Object.freeze({TOTAL:10,ACTIVE:5,TITLE_LENGTH:60,SUBTITLE_LENGTH:120}),t=Object.freeze({TOTAL:15,ACTIVE:9,LINKS:5,LINK_LABEL_LENGTH:50});export{e as n,t};

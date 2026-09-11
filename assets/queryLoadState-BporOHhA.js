@@ -1,0 +1,1 @@
+var e=({error:e,dataUpdatedAt:t})=>{let n=Number(t)>0;return{hasStaleData:!!(e&&n),hasBlockingError:!!(e&&!n)}};export{e as t};
