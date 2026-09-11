@@ -1,19 +1,18 @@
-# Dormitory Repair Demo
+# Dormitory Repair System — Project Showcase
 
-Public interactive demo of a student dormitory repair workflow.
+Public portfolio showcase for a student dormitory repair management project.
 
-This repository contains deployment artifacts only. The demo uses fictional in-memory data and does not connect to a production backend, database, authentication service, WebSocket service, or private repository.
+This site is intentionally a static showcase rather than an interactive demo. It presents the project structure, role-based workflow and selected screenshots from the student-facing user guide.
 
-## Live demo
+## Public content
 
-GitHub Pages: https://painter121.github.io/rmuti-dormitory-demo/
+- Project overview
+- Student, technician and administrator role summaries
+- Repair workflow overview
+- Selected student-interface screenshots already used by the project's user guide
 
-## Demo scope
+## Privacy
 
-- Student repair dashboard
-- Create a fictional repair request
-- Track sample repair status
-- View sample repair history
-- Advance demo repair states
+The real application repository remains private. This public repository does not include the application source tree, backend, environment files, database, credentials, tokens, internal plans, production records or production API connections.
 
-No production credentials, tokens, contact data, uploaded files, or production records are included.
+Live site: https://painter121.github.io/rmuti-dormitory-demo/

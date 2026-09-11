@@ -1,5 +1,204 @@
 <!doctype html>
-<html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="description" content="ทดลองใช้ระบบแจ้งซ่อมหอพัก ผลงานโปรเจ็กต์นักศึกษา ด้วยข้อมูลสมมติ"/><title>ระบบแจ้งซ่อมหอพัก | Demo</title>  <script type="module" crossorigin src="/rmuti-dormitory-demo/assets/index-BqQrB-j3.js"></script>
-  <link rel="modulepreload" crossorigin href="/rmuti-dormitory-demo/assets/createLucideIcon-DnXeuHes.js">
-  <link rel="stylesheet" crossorigin href="/rmuti-dormitory-demo/assets/index-DxDzMeG1.css">
-</head><body><div id="root"></div></body></html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="หน้าแสดงผลงานระบบแจ้งซ่อมหอพัก แยกตามบทบาทนักศึกษา ช่าง และผู้ดูแลระบบ" />
+  <title>ระบบแจ้งซ่อมหอพัก | Project Showcase</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="กลับด้านบน">
+        <span class="brand-mark">RMUTI</span>
+        <span class="brand-name">Dormitory Repair System</span>
+      </a>
+      <nav class="nav-links" aria-label="เมนูหลัก">
+        <a href="#overview">ภาพรวม</a>
+        <a href="#roles">บทบาท</a>
+        <a href="#workflow">ขั้นตอนงาน</a>
+        <a href="#screens">หน้าจอ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-image" aria-hidden="true"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">Computer Engineering Project</p>
+        <h1>ระบบจัดการแจ้งซ่อมหอพักนักศึกษา</h1>
+        <p class="hero-copy">หน้าแสดงผลงานนี้สรุปโครงสร้างการใช้งานของระบบผ่านมุมมองนักศึกษา ช่าง และผู้ดูแลระบบ โดยเน้นหน้าตาและลำดับการทำงานหลัก ไม่เชื่อมต่อระบบจริงและไม่มีข้อมูลจริง</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#roles">ดูแต่ละบทบาท</a>
+          <a class="button button-secondary" href="#screens">ดูภาพหน้าจอ</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="section section-light">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow dark">Project Overview</p>
+          <h2>ระบบเดียว ครอบคลุมวงจรงานซ่อมตั้งแต่แจ้งปัญหาจนปิดงาน</h2>
+          <p>ออกแบบให้ผู้ใช้แต่ละบทบาทเห็นเฉพาะสิ่งที่เกี่ยวข้องกับงานของตนเอง และติดตามความคืบหน้าได้จากสถานะเดียวกัน</p>
+        </div>
+        <div class="overview-grid">
+          <article class="metric-card">
+            <strong>3</strong>
+            <span>บทบาทหลัก</span>
+            <p>นักศึกษา ช่าง และผู้ดูแลระบบ</p>
+          </article>
+          <article class="metric-card">
+            <strong>1</strong>
+            <span>Repair Lifecycle</span>
+            <p>ใช้สถานะร่วมกันตั้งแต่แจ้งงานจนเสร็จสิ้น</p>
+          </article>
+          <article class="metric-card">
+            <strong>Web</strong>
+            <span>Responsive Interface</span>
+            <p>รองรับการใช้งานทั้งคอมพิวเตอร์และอุปกรณ์พกพา</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="roles" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow dark">Role-based Experience</p>
+          <h2>แยกหน้าที่ชัดเจนตามบทบาทผู้ใช้งาน</h2>
+          <p>แต่ละบทบาทมีจุดเริ่มต้นและเครื่องมือที่ต่างกัน แต่เชื่อมกันด้วยรายการแจ้งซ่อมเดียวกัน</p>
+        </div>
+
+        <div class="role-grid">
+          <article class="role-card role-student">
+            <div class="role-index">01</div>
+            <p class="role-label">นักศึกษา</p>
+            <h3>แจ้งปัญหาและติดตามงานได้ด้วยตัวเอง</h3>
+            <p class="role-copy">เน้นการแจ้งข้อมูลให้ครบ ดูสถานะล่าสุด จัดการนัดหมาย และย้อนดูประวัติรายการเดิม</p>
+            <ul class="feature-list">
+              <li>หน้าแจ้งซ่อมห้องพัก</li>
+              <li>ติดตามสถานะและรายละเอียดงาน</li>
+              <li>ยืนยันหรือขอเลื่อนนัดหมาย</li>
+              <li>ดูประวัติการแจ้งซ่อม</li>
+            </ul>
+          </article>
+
+          <article class="role-card role-tech">
+            <div class="role-index">02</div>
+            <p class="role-label">ช่าง</p>
+            <h3>จัดลำดับงาน ประสานเวลา และบันทึกผลการซ่อม</h3>
+            <p class="role-copy">รวมรายการงานที่รับผิดชอบ ปฏิทินงาน รายละเอียดการซ่อม วัสดุที่ใช้ และประวัติงานที่เสร็จแล้ว</p>
+            <ul class="feature-list">
+              <li>รายการงานของฉัน</li>
+              <li>ปฏิทินและการนัดหมาย</li>
+              <li>อัปเดตความคืบหน้าและผลซ่อม</li>
+              <li>วัสดุและประวัติงานที่เสร็จแล้ว</li>
+            </ul>
+          </article>
+
+          <article class="role-card role-admin">
+            <div class="role-index">03</div>
+            <p class="role-label">ผู้ดูแลระบบ</p>
+            <h3>มองภาพรวมและดูแลข้อมูลที่ระบบใช้ร่วมกัน</h3>
+            <p class="role-copy">จัดการใบแจ้งซ่อม ผู้ใช้ ห้องและสถานที่ วัสดุ รายงาน และข้อมูลงานระบบที่เกี่ยวข้องกับการบริหารหอพัก</p>
+            <ul class="feature-list">
+              <li>Dashboard และจัดการงานซ่อม</li>
+              <li>ผู้ใช้ ห้อง และสถานที่</li>
+              <li>วัสดุและข้อมูลหลัก</li>
+              <li>รายงานและงานดูแลระบบ</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="workflow" class="section section-dark">
+      <div class="container">
+        <div class="section-heading inverse">
+          <p class="eyebrow">Repair Workflow</p>
+          <h2>ลำดับงานหลักที่เชื่อมทั้งสามบทบาท</h2>
+          <p>แสดงภาพรวมการส่งต่องาน โดยไม่เปิดรายละเอียดภายในของระบบจริง</p>
+        </div>
+        <ol class="timeline">
+          <li><span>01</span><div><h3>นักศึกษาแจ้งปัญหา</h3><p>ระบุประเภท สถานที่ รายละเอียด และข้อมูลประกอบที่จำเป็น</p></div></li>
+          <li><span>02</span><div><h3>ตรวจสอบและรับงาน</h3><p>รายการเข้าสู่คิวเพื่อให้เจ้าหน้าที่หรือช่างดำเนินการตามขั้นตอน</p></div></li>
+          <li><span>03</span><div><h3>ประสานวันและเวลา</h3><p>ผู้เกี่ยวข้องตรวจสอบความพร้อมและจัดการนัดหมายเมื่อจำเป็น</p></div></li>
+          <li><span>04</span><div><h3>ดำเนินการซ่อม</h3><p>ช่างอัปเดตความคืบหน้าและบันทึกข้อมูลที่เกี่ยวข้องกับการซ่อม</p></div></li>
+          <li><span>05</span><div><h3>ปิดงานและเก็บประวัติ</h3><p>ผลการดำเนินงานถูกสรุปและย้อนดูได้ตามสิทธิ์ของแต่ละบทบาท</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="screens" class="section section-light">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow dark">Student Interface</p>
+          <h2>ตัวอย่างหน้าจอจากคู่มือการใช้งานจริง</h2>
+          <p>ชุดภาพนี้เป็นภาพหน้าจอฝั่งนักศึกษาที่ใช้อยู่ในคู่มือของระบบ เลือกมาเฉพาะส่วนที่ช่วยให้เห็นรูปแบบการใช้งานโดยรวม</p>
+        </div>
+
+        <div class="gallery-grid">
+          <button class="shot-card" type="button" data-image="./media/repair/step-1.png" data-title="แจ้งซ่อม — เลือกประเภทและสถานที่">
+            <img src="./media/repair/step-1.png" alt="ตัวอย่างหน้าแจ้งซ่อม เลือกประเภทและสถานที่" loading="lazy" />
+            <span><strong>หน้าแจ้งซ่อม</strong><small>เลือกประเภทงานและสถานที่</small></span>
+          </button>
+          <button class="shot-card" type="button" data-image="./media/repair/step-4.png" data-title="แจ้งซ่อม — ตรวจรายละเอียดก่อนส่ง">
+            <img src="./media/repair/step-4.png" alt="ตัวอย่างหน้าแจ้งซ่อมก่อนส่งข้อมูล" loading="lazy" />
+            <span><strong>ส่งรายละเอียดปัญหา</strong><small>ตรวจข้อมูลก่อนสร้างรายการ</small></span>
+          </button>
+          <button class="shot-card" type="button" data-image="./media/status/overview.png" data-title="ติดตามสถานะ — รายการแจ้งซ่อม">
+            <img src="./media/status/overview.png" alt="ตัวอย่างหน้าติดตามสถานะรายการแจ้งซ่อม" loading="lazy" />
+            <span><strong>ติดตามสถานะ</strong><small>ดูรายการและความคืบหน้า</small></span>
+          </button>
+          <button class="shot-card" type="button" data-image="./media/status/detail.png" data-title="ติดตามสถานะ — รายละเอียดงาน">
+            <img src="./media/status/detail.png" alt="ตัวอย่างหน้ารายละเอียดงานซ่อม" loading="lazy" />
+            <span><strong>รายละเอียดงาน</strong><small>ดูข้อมูลและสถานะล่าสุด</small></span>
+          </button>
+          <button class="shot-card" type="button" data-image="./media/appointment/reschedule.png" data-title="นัดหมาย — ขอเลื่อนเวลา">
+            <img src="./media/appointment/reschedule.png" alt="ตัวอย่างหน้าขอเลื่อนเวลานัดหมาย" loading="lazy" />
+            <span><strong>จัดการนัดหมาย</strong><small>ขอเปลี่ยนวันหรือเวลาเข้าซ่อม</small></span>
+          </button>
+          <button class="shot-card" type="button" data-image="./media/appointment/calendar.png" data-title="นัดหมาย — เลือกวันและเวลา">
+            <img src="./media/appointment/calendar.png" alt="ตัวอย่างปฏิทินเลือกวันและเวลา" loading="lazy" />
+            <span><strong>เลือกวันและเวลา</strong><small>กำหนดช่วงเวลาที่สะดวก</small></span>
+          </button>
+        </div>
+
+        <div class="role-note">
+          <div>
+            <h3>ฝั่งช่างและผู้ดูแลระบบ</h3>
+            <p>ในหน้า Showcase นี้จะแสดงขอบเขตโมดูลและหน้าที่หลักก่อน โดยไม่สร้างภาพจำลองขึ้นมาแทนหน้าจอจริง เมื่อมีภาพหน้าจอที่คัดและตรวจข้อมูลแล้ว สามารถเพิ่มเข้า Gallery ภายหลังได้โดยไม่ต้องเปิดระบบจริง</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section project-note">
+      <div class="container note-panel">
+        <p class="eyebrow dark">Portfolio Note</p>
+        <h2>หน้าเว็บนี้เป็น Project Showcase ไม่ใช่ระบบสำหรับทดลองใช้งาน</h2>
+        <p>จุดประสงค์คือให้เห็นแนวคิด UX/UI โครงสร้างบทบาท และลำดับงานหลักของโปรเจกต์ โดยระบบจริงและข้อมูลภายในยังคงแยกออกจากพื้นที่สาธารณะ</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <span>RMUTI Dormitory Repair System</span>
+      <span>Project Showcase</span>
+    </div>
+  </footer>
+
+  <dialog class="image-modal" id="imageModal">
+    <button class="modal-close" type="button" aria-label="ปิดภาพ">ปิด</button>
+    <img id="modalImage" alt="" />
+    <p id="modalTitle"></p>
+  </dialog>
+
+  <script src="./script.js"></script>
+</body>
+</html>
