@@ -1,1 +1,0 @@
-import{a as e}from"./vendor-framer-DXE0nwZD.js";import{d as t}from"./index-CSHOIsQh.js";import{t as n}from"./RepairHistoryReport-CzBglNxI.js";var r=e();function i(){let{user:e}=t();return(0,r.jsx)(n,{mode:`technician`,technicianId:e.userId})}export{i as default};

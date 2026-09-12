@@ -1,1 +1,0 @@
-import{r as e}from"./vendor-react-CYQLWI4i.js";import{a as t}from"./vendor-framer-DXE0nwZD.js";var n=t();function r(){return(0,n.jsx)(e,{to:`/tech/jobs?tab=done&report=history`,replace:!0})}export{r as default};
