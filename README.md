@@ -1,21 +1,77 @@
-# RMUTI Dormitory System — Live Interactive Showcase
+<div align="center">
 
-ระบบรับแจ้งซ่อมและบริหารจัดการหอพักนักศึกษา มหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน (Interactive Live Showcase)
+# RMUTI Dormitory System
 
-## เกี่ยวกับเดโมนี้
-หน้านี้เป็น Live UI & Module Showcase ของระบบงานจริง โดยแสดงผลการออกแบบ หน้าจอ ส่วนประกอบ และการตกแต่งของโมดูลต่างๆ ทั้งหมดผ่านเบราว์เซอร์:
-- **โมดูลนักศึกษา (Student)**: หน้าแดชบอร์ด, แบบฟอร์มแจ้งซ่อม, ติดตามสถานะงานซ่อมพร้อมไทม์ไลน์, ประวัติการแจ้งซ่อม, การนัดหมายช่าง
-- **โมดูลช่างซ่อม (Technician)**: ตารางงานช่าง, ปฏิทินงานซ่อม (FullCalendar), ระบบเบิก-ใช้วัสดุและอะไหล่, รายงานผลงานช่าง
-- **โมดูลผู้ดูแลระบบ (Admin / Staff)**: แดชบอร์ดสรุปสถิติ & KPI, ระบบจัดการงานซ่อมทั้งหมด, ผังห้องพักและอาคาร, จัดการข้อมูลนักศึกษาและบุคลากร, คลังอุปกรณ์และครุภัณฑ์, ข้อมูลหลัก Master Data และการบำรุงรักษาระบบ
-- **โมดูลสาธารณะ (Public)**: Landing Page, ตรวจสอบสถานะการซ่อมทั่วไป, แจ้งซ่อมพื้นที่ส่วนกลาง
+ระบบรับแจ้งซ่อมและติดตามสถานะงานซ่อมหอพักนักศึกษา<br>
+มหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน
 
-*หมายเหตุ: ข้อมูลทั้งหมดในเดโมนี้เป็นข้อมูลจำลองเพื่อการสาธิตการทำงานและนำเสนอผลงานทางด้านหน้าบ้าน (Frontend UI & Interaction) โดยไม่มีการเชื่อมต่อฐานข้อมูลหรือเซิร์ฟเวอร์จริง*
+**[เปิด Live Demo](https://painter121.github.io/rmuti-dormitory-demo/)** · **[ดูโปรไฟล์ผู้พัฒนา](#ผู้พัฒนา)**
+
+</div>
+
+[![RMUTI Dormitory System landing page](screenshots/landing-page.png)](https://painter121.github.io/rmuti-dormitory-demo/)
+
+## ภาพรวมโปรเจกต์
+
+RMUTI Dormitory System เป็น Interactive Frontend Showcase สำหรับระบบบริหารงานซ่อมหอพัก ออกแบบให้ผู้ใช้แต่ละบทบาทเห็นข้อมูลและขั้นตอนทำงานที่เกี่ยวข้อง ตั้งแต่การแจ้งปัญหา ติดตามความคืบหน้า นัดหมายช่าง ไปจนถึงการตรวจสอบประวัติงานซ่อม
+
+เดโมนี้ใช้ข้อมูลจำลองทั้งหมดและไม่เชื่อมต่อฐานข้อมูลหรือระบบงานจริง ผู้เข้าชมจึงสามารถทดลองหน้าจอและ workflow ได้อย่างปลอดภัย
+
+## UI Showcase
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="screenshots/student-dashboard.png" alt="Student repair dashboard">
+    </td>
+    <td width="50%">
+      <img src="screenshots/repair-history.png" alt="Student repair history">
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Student Dashboard</strong><br>ภาพรวมรายการแจ้งซ่อม สถานะ และข้อมูลห้องพัก</td>
+    <td align="center"><strong>Repair History</strong><br>ตรวจสอบงานย้อนหลังและสถานะของแต่ละรายการ</td>
+  </tr>
+</table>
+
+## Workflow หลัก
+
+**แจ้งปัญหา** → **ติดตามสถานะ** → **นัดหมายช่าง** → **ตรวจสอบประวัติ**
+
+| Module | ความสามารถที่นำเสนอ |
+|---|---|
+| Student | Dashboard, แบบฟอร์มแจ้งซ่อม, Timeline สถานะ, นัดหมาย และประวัติ |
+| Technician | ตารางงาน ปฏิทินงานซ่อม การใช้วัสดุ และรายงานผลงาน |
+| Admin / Staff | Dashboard สถิติ จัดการงานซ่อม ห้องพัก บุคลากร และคลังอุปกรณ์ |
+| Public | Landing Page, ตรวจสอบสถานะ และแจ้งซ่อมพื้นที่ส่วนกลาง |
+
+## จุดเด่นของผลงาน
+
+- แยกหน้าจอและ navigation ตามบทบาทของผู้ใช้งาน
+- แสดงสถานะงานซ่อมด้วย card, badge และ timeline ที่อ่านง่าย
+- รองรับการทดลอง workflow โดยไม่ต้องเข้าสู่ระบบจริง
+- ออกแบบ Responsive UI สำหรับหน้าจอ desktop และ mobile
+- พัฒนาด้วย React และ Vite พร้อม component ที่นำกลับมาใช้ซ้ำได้
+
+## เทคโนโลยี
+
+`React` · `Vite` · `JavaScript` · `Responsive Web Design` · `GitHub Pages`
 
 ## ผู้พัฒนา
 
-โปรเจกต์นี้เป็นผลงานที่พัฒนาและดูแลร่วมกันโดย:
+<table>
+  <tr>
+    <td align="center" width="160">
+      <a href="https://github.com/Painter121"><img src="https://github.com/Painter121.png?size=100" width="80" alt="Painter121 avatar"><br><strong>Phuriphat Malison</strong><br>@Painter121</a>
+    </td>
+    <td align="center" width="160">
+      <a href="https://github.com/firstphethay11"><img src="https://github.com/firstphethay11.png?size=100" width="80" alt="firstphethay11 avatar"><br><strong>@firstphethay11</strong></a>
+    </td>
+  </tr>
+</table>
 
-- [Phuriphat Malison (@Painter121)](https://github.com/Painter121)
-- [@firstphethay11](https://github.com/firstphethay11)
+ทั้งสองบัญชีร่วมพัฒนาและดูแลโปรเจกต์นี้ โดยสามารถร่วมแก้ไขผ่าน GitHub repository เดียวกัน
 
-🌐 **เข้าชมเว็บไซต์**: [https://painter121.github.io/rmuti-dormitory-demo/](https://painter121.github.io/rmuti-dormitory-demo/)
+---
+
+ทดลองใช้งาน: **[painter121.github.io/rmuti-dormitory-demo](https://painter121.github.io/rmuti-dormitory-demo/)**
