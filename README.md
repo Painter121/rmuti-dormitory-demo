@@ -57,20 +57,20 @@ RMUTI Dormitory System เป็น Interactive Frontend Showcase สำหร�
 
 `React` · `Vite` · `JavaScript` · `Responsive Web Design` · `GitHub Pages`
 
-## ผู้พัฒนา
+<h2 align="center">ผู้พัฒนา</h2>
 
-<table>
+<table align="center">
   <tr>
-    <td align="center" width="160">
-      <a href="https://github.com/Painter121"><img src="https://github.com/Painter121.png?size=100" width="80" alt="Painter121 avatar"><br><strong>Phuriphat Malison</strong><br>@Painter121</a>
+    <td align="center" valign="middle" width="220">
+      <a href="https://github.com/Painter121"><img src="https://github.com/Painter121.png?size=120" width="100" height="100" alt="Painter121 avatar"><br><br><strong>@Painter121</strong></a>
     </td>
-    <td align="center" width="160">
-      <a href="https://github.com/firstphethay11"><img src="https://github.com/firstphethay11.png?size=100" width="80" alt="firstphethay11 avatar"><br><strong>@firstphethay11</strong></a>
+    <td align="center" valign="middle" width="220">
+      <a href="https://github.com/firstphethay11"><img src="https://github.com/firstphethay11.png?size=120" width="100" height="100" alt="firstphethay11 avatar"><br><br><strong>@firstphethay11</strong></a>
     </td>
   </tr>
 </table>
 
-ทั้งสองบัญชีร่วมพัฒนาและดูแลโปรเจกต์นี้ โดยสามารถร่วมแก้ไขผ่าน GitHub repository เดียวกัน
+<p align="center">ทั้งสองบัญชีร่วมพัฒนาและดูแลโปรเจกต์นี้<br>โดยสามารถร่วมแก้ไขผ่าน GitHub repository เดียวกัน</p>
 
 ---
 
