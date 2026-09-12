@@ -70,7 +70,7 @@ RMUTI Dormitory System เป็น Interactive Frontend Showcase สำหร�
   </tr>
 </table>
 
-<p align="center">ทั้งสองบัญชีร่วมพัฒนาและดูแลโปรเจกต์นี้<br>โดยสามารถร่วมแก้ไขผ่าน GitHub repository เดียวกัน</p>
+<p align="center">ทั้งสองบัญชีร่วมพัฒนาและดูแลโปรเจกต์นี้</p>
 
 ---
 
