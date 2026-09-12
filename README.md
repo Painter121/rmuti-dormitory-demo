@@ -9,7 +9,7 @@
 
 </div>
 
-[![RMUTI Dormitory System landing page](screenshots/landing-page.png)](https://painter121.github.io/rmuti-dormitory-demo/)
+[![RMUTI Dormitory System landing page](screenshots/landing-page-new.png)](https://painter121.github.io/rmuti-dormitory-demo/)
 
 ## ภาพรวมโปรเจกต์
 
@@ -22,15 +22,27 @@ RMUTI Dormitory System เป็น Interactive Frontend Showcase สำหร�
 <table>
   <tr>
     <td width="50%">
-      <img src="screenshots/student-dashboard.png" alt="Student repair dashboard">
+      <img src="screenshots/admin-dashboard.png" alt="Admin repair dashboard">
     </td>
     <td width="50%">
-      <img src="screenshots/repair-history.png" alt="Student repair history">
+      <img src="screenshots/performance-monitoring.png" alt="System performance monitoring">
     </td>
   </tr>
   <tr>
-    <td align="center"><strong>Student Dashboard</strong><br>ภาพรวมรายการแจ้งซ่อม สถานะ และข้อมูลห้องพัก</td>
-    <td align="center"><strong>Repair History</strong><br>ตรวจสอบงานย้อนหลังและสถานะของแต่ละรายการ</td>
+    <td align="center"><strong>Admin Dashboard</strong><br>สรุปสถานะงานซ่อม แนวโน้ม และอัตรางานสำเร็จ</td>
+    <td align="center"><strong>Performance Monitoring</strong><br>ติดตาม Requests, Latency และ Event Loop ของระบบ</td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="screenshots/repair-request-form.png" alt="Student repair request form">
+    </td>
+    <td width="50%">
+      <img src="screenshots/contact-map.png" alt="Dormitory contact map">
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Repair Request</strong><br>แบบฟอร์มแจ้งซ่อมสำหรับนักศึกษาพร้อมแนบรูปภาพ</td>
+    <td align="center"><strong>Contact & Location</strong><br>แผนที่ตั้งและข้อมูลติดต่อหอพักอย่างครบถ้วน</td>
   </tr>
 </table>
 
