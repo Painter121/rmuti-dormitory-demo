@@ -9,7 +9,7 @@
 Interactive Frontend Showcase สำหรับมหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน<br>
 ทดลองกระบวนการทำงานครบทั้งนักศึกษา ช่างซ่อม เจ้าหน้าที่ และผู้ใช้งานทั่วไป
 
-**[เปิด Live Demo](https://painter121.github.io/rmuti-dormitory-demo/)** · **[ชมภาพจากเว็บไซต์จริง](#ภาพจากเว็บไซต์จริง)** · **[ดูความสามารถ](#ความสามารถของระบบ)** · **[ผู้พัฒนา](#ผู้พัฒนา)**
+**[เปิด Live Demo](https://painter121.github.io/rmuti-dormitory-demo/)** · **[ชมภาพหน้าจอเว็บไซต์](#ภาพหน้าจอเว็บไซต์)** · **[ดูความสามารถ](#ความสามารถของระบบ)** · **[ผู้พัฒนา](#ผู้พัฒนา)**
 
 `React 19` · `Vite 8` · `Tailwind CSS 4` · `Mock Data แยกจากระบบจริง`
 
@@ -50,31 +50,39 @@ RMUTI Dormitory System คือเดโมระบบบริหารงา
 - รองรับ Responsive Layout, Light/Dark Theme และภาษาไทย
 - ทดลอง workflow ได้ทันทีด้วยข้อมูลจำลองโดยไม่กระทบระบบจริง
 
-## ภาพจากเว็บไซต์จริง
+## ภาพหน้าจอเว็บไซต์
 
-ภาพชุดนี้เป็นภาพสถานที่จริงที่นำมาใช้บนเว็บไซต์ ไม่ใช่ข้อมูลหรือหน้าจอจำลองของระบบ
+ภาพด้านล่างเป็น UI ที่รันจริงจาก Live Demo ส่วนรายชื่อ รายการงาน และสถิติภายในหน้าจอเป็นข้อมูลจำลองเพื่อความปลอดภัย
 
 <table>
   <tr>
-    <td width="50%"><img src="dormitory1.jpg" alt="อาคารหอพักนักศึกษา มทร.อีสาน"></td>
-    <td width="50%"><img src="dormitory2.webp" alt="มุมอาคารหอพักนักศึกษา มทร.อีสาน"></td>
+    <td width="50%"><img src="screenshots/student-dashboard.png" alt="Student dashboard website page"></td>
+    <td width="50%"><img src="screenshots/repair-request-form.png" alt="Repair request website page"></td>
   </tr>
   <tr>
-    <td align="center"><strong>อาคารหอพักนักศึกษา</strong><br>ภาพพื้นที่อาคารจริงภายในมหาวิทยาลัย</td>
-    <td align="center"><strong>บรรยากาศภายในหอพัก</strong><br>ภาพมุมอาคารที่ใช้บนหน้าเว็บไซต์</td>
+    <td align="center"><strong>Student Dashboard</strong><br>ภาพรวมคำขอ ห้องพัก และการนัดหมาย</td>
+    <td align="center"><strong>Repair Request</strong><br>แบบฟอร์มแจ้งซ่อมพร้อมรายละเอียดและรูปภาพ</td>
   </tr>
   <tr>
-    <td width="50%"><img src="dormitory3.webp" alt="อาคารหอพักในช่วงแสงเย็น"></td>
-    <td width="50%"><img src="dormitory4.jpg" alt="ลานภายในอาคารหอพัก"></td>
+    <td width="50%"><img src="screenshots/repair-history.png" alt="Repair history website page"></td>
+    <td width="50%"><img src="screenshots/admin-dashboard.png" alt="Admin dashboard website page"></td>
   </tr>
   <tr>
-    <td align="center"><strong>พื้นที่อาคารช่วงเย็น</strong><br>ภาพจริงสำหรับส่วนประชาสัมพันธ์ของเว็บไซต์</td>
-    <td align="center"><strong>ลานส่วนกลาง</strong><br>พื้นที่จริงภายในบริเวณหอพักนักศึกษา</td>
+    <td align="center"><strong>Repair History</strong><br>ค้นหา กรอง และตรวจสอบงานซ่อมย้อนหลัง</td>
+    <td align="center"><strong>Admin Dashboard</strong><br>สรุปสถานะ แนวโน้ม และประสิทธิภาพการดำเนินงาน</td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="screenshots/performance-monitoring.png" alt="Performance monitoring website page"></td>
+    <td width="50%"><img src="screenshots/contact-map.png" alt="Contact and location website page"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Performance Monitoring</strong><br>ติดตาม Requests, Latency และ Event Loop</td>
+    <td align="center"><strong>Contact &amp; Location</strong><br>ข้อมูลติดต่อและแผนที่ตั้งหอพัก</td>
   </tr>
 </table>
 
-> [!IMPORTANT]
-> หน้าจอสำหรับทดลองบทบาทและ workflow ภายใน Live Demo ใช้ข้อมูลจำลองที่แยกออกจากระบบจริง จึงไม่นำภาพเหล่านั้นมาปะปนกับชุดภาพสถานที่จริงใน README
+> [!NOTE]
+> หน้าเว็บและองค์ประกอบ UI เป็นผลงานจริงของโปรเจกต์ ข้อมูลที่แสดงภายในเป็นเพียง Mock Data ซึ่งแยกจากข้อมูลและระบบงานจริงทั้งหมด
 
 ## โครงสร้างการทำงาน
 
