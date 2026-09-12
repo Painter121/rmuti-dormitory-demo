@@ -1,1 +1,0 @@
-function e(e){if(!e||typeof e!=`string`)return``;if(e.startsWith(`http://`)||e.startsWith(`https://`)||e.startsWith(`blob:`)||e.startsWith(`data:`))return e;let t=`/rmuti-dormitory-demo/`;return e.startsWith(t)?e:`${t}${e.replace(/^\//,``)}`}export{e as t};
