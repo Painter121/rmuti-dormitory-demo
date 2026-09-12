@@ -1,136 +1,169 @@
 <div align="center">
 
+<img src="LoGORMUTI.png" width="110" alt="RMUTI logo">
+
 # RMUTI Dormitory System
 
-ระบบรับแจ้งซ่อมและติดตามสถานะงานซ่อมหอพักนักศึกษา<br>
-มหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน
+### ระบบรับแจ้งซ่อมและติดตามงานซ่อมหอพักนักศึกษา
 
-**[เปิด Live Demo](https://painter121.github.io/rmuti-dormitory-demo/)** · **[ดูโปรไฟล์ผู้พัฒนา](#ผู้พัฒนา)**
+Interactive Frontend Showcase สำหรับมหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน<br>
+ทดลองกระบวนการทำงานครบทั้งนักศึกษา ช่างซ่อม เจ้าหน้าที่ และผู้ใช้งานทั่วไป
+
+**[เปิด Live Demo](https://painter121.github.io/rmuti-dormitory-demo/)** · **[ชมหน้าจอระบบ](#ui-showcase)** · **[ดูความสามารถ](#ความสามารถของระบบ)** · **[ผู้พัฒนา](#ผู้พัฒนา)**
+
+`React 19` · `Vite 8` · `Tailwind CSS 4` · `100% Mock Data`
 
 </div>
 
-[![RMUTI Dormitory System landing page](screenshots/landing-page-new.png)](https://painter121.github.io/rmuti-dormitory-demo/)
+[![RMUTI Dormitory System](screenshots/landing-page-new.png)](https://painter121.github.io/rmuti-dormitory-demo/)
 
-## ภาพรวมโปรเจกต์
+## เกี่ยวกับโปรเจกต์
 
-RMUTI Dormitory System เป็น Interactive Frontend Showcase สำหรับระบบบริหารงานซ่อมหอพัก ออกแบบให้ผู้ใช้แต่ละบทบาทเห็นข้อมูลและขั้นตอนทำงานที่เกี่ยวข้อง ตั้งแต่การแจ้งปัญหา ติดตามความคืบหน้า นัดหมายช่าง ไปจนถึงการตรวจสอบประวัติงานซ่อม
+RMUTI Dormitory System คือเดโมระบบบริหารงานซ่อมหอพักแบบโต้ตอบ ตั้งแต่การแจ้งปัญหา การตรวจสอบและมอบหมายงาน การนัดหมายช่าง การอัปเดตสถานะ ไปจนถึงการดูประวัติและรายงานผล โดยออกแบบหน้าจอและเมนูให้เหมาะกับสิทธิ์ของผู้ใช้งานแต่ละบทบาท
 
-เดโมนี้ใช้ข้อมูลจำลองทั้งหมดและไม่เชื่อมต่อฐานข้อมูลหรือระบบงานจริง ผู้เข้าชมจึงสามารถทดลองหน้าจอและ workflow ได้อย่างปลอดภัย
-
-## UI Showcase
-
-<table>
-  <tr>
-    <td width="50%">
-      <img src="screenshots/admin-dashboard.png" alt="Admin repair dashboard">
-    </td>
-    <td width="50%">
-      <img src="screenshots/performance-monitoring.png" alt="System performance monitoring">
-    </td>
-  </tr>
-  <tr>
-    <td align="center"><strong>Admin Dashboard</strong><br>สรุปสถานะงานซ่อม แนวโน้ม และอัตรางานสำเร็จ</td>
-    <td align="center"><strong>Performance Monitoring</strong><br>ติดตาม Requests, Latency และ Event Loop ของระบบ</td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <img src="screenshots/repair-request-form.png" alt="Student repair request form">
-    </td>
-    <td width="50%">
-      <img src="screenshots/contact-map.png" alt="Dormitory contact map">
-    </td>
-  </tr>
-  <tr>
-    <td align="center"><strong>Repair Request</strong><br>แบบฟอร์มแจ้งซ่อมสำหรับนักศึกษาพร้อมแนบรูปภาพ</td>
-    <td align="center"><strong>Contact & Location</strong><br>แผนที่ตั้งและข้อมูลติดต่อหอพักอย่างครบถ้วน</td>
-  </tr>
-</table>
+> [!NOTE]
+> เว็บไซต์นี้เป็น Portfolio Demo ที่ใช้ข้อมูลจำลองทั้งหมด ไม่เชื่อมต่อฐานข้อมูลหรือระบบงานจริง และไม่มีข้อมูลส่วนบุคคลของผู้ใช้งานจริง
 
 ## Workflow หลัก
 
-**แจ้งปัญหา** → **ติดตามสถานะ** → **นัดหมายช่าง** → **ตรวจสอบประวัติ**
+<div align="center">
 
-## ขอบเขตระบบทั้งหมด
+**แจ้งปัญหา**　→　**ตรวจสอบคำขอ**　→　**มอบหมายช่าง**　→　**นัดหมาย**　→　**ดำเนินการซ่อม**　→　**ติดตามและปิดงาน**
 
-ระบบไม่ได้มีเพียงหน้ารับแจ้งซ่อม แต่ครอบคลุมกระบวนการบริหารงานซ่อมหอพักตั้งแต่ต้นจนจบ โดยออกแบบหน้าจอและสิทธิ์การใช้งานตามบทบาทหลัก 4 กลุ่ม
+</div>
 
-### นักศึกษา (Student)
+## ความสามารถของระบบ
 
-- Dashboard สรุปงานซ่อมและข้อมูลห้องพักของตนเอง
-- สร้างคำขอแจ้งซ่อม เลือกประเภทงาน ระบุรายละเอียด และแนบรูปภาพ
-- ตรวจสอบและแก้ไขข้อมูลก่อนส่ง พร้อมป้องกันข้อมูลในฟอร์มหายเมื่อออกจากหน้า
-- ติดตามสถานะผ่าน Status Card และ Timeline ของแต่ละขั้นตอน
-- ดูรายละเอียด ผู้รับผิดชอบ และประวัติการดำเนินงานของคำขอ
-- นัดหมายวันและเวลากับช่าง รวมถึงตรวจสอบนัดหมายที่กำลังดำเนินการ
-- ค้นหา กรอง และดูประวัติงานซ่อมย้อนหลัง
+| บทบาท | ความสามารถหลัก |
+|---|---|
+| **นักศึกษา (Student)** | ดู Dashboard, แจ้งซ่อมพร้อมแนบภาพ, ติดตาม Timeline, นัดหมายช่าง และค้นหาประวัติงานซ่อม |
+| **ช่างซ่อม (Technician)** | รับงานที่ได้รับมอบหมาย, วางแผนผ่านปฏิทิน, บันทึกความคืบหน้าและวัสดุที่ใช้ และสรุปผลการปฏิบัติงาน |
+| **ผู้ดูแลระบบ (Admin / Staff)** | ตรวจสอบและมอบหมายงาน, จัดการห้องพักและผู้ใช้งาน, ดูรายงาน, ส่งออกข้อมูล และตรวจสอบประสิทธิภาพระบบ |
+| **ผู้ใช้งานทั่วไป (Public)** | ดูข่าวสารและข้อมูลติดต่อ, แจ้งซ่อมพื้นที่ส่วนกลาง และติดตามสถานะคำขอ |
 
-### ช่างซ่อม (Technician)
+### จุดเด่น
 
-- ดูรายการงานที่ได้รับมอบหมายและรายละเอียดของแต่ละงาน
-- วางแผนงานผ่านปฏิทินและตารางนัดหมาย
-- บันทึกความคืบหน้าและสถานะการปฏิบัติงาน
-- เลือกและบันทึกวัสดุหรืออุปกรณ์ที่ใช้ในงานซ่อม
-- ตรวจสอบรายการวัสดุที่เกี่ยวข้องกับงาน
-- ดูรายงานและสรุปผลการปฏิบัติงานของช่าง
-
-### ผู้ดูแลระบบและเจ้าหน้าที่ (Admin / Staff)
-
-- Dashboard ภาพรวมจำนวนงาน แนวโน้ม สัดส่วนสถานะ และอัตรางานสำเร็จ
-- จัดการคำขอแจ้งซ่อม ค้นหา กรอง ดูรายละเอียด และมอบหมายงานให้ช่าง
-- ตรวจสอบรายการแจ้งซ่อมที่อาจซ้ำกันก่อนดำเนินการ
-- บริหารปฏิทินงานซ่อมและตารางปฏิบัติงาน
-- จัดการอาคาร หอพัก ห้องพัก และพื้นที่ส่วนกลาง
-- จัดการนักศึกษา การจัดสรรห้อง และประวัติการย้ายห้อง
-- จัดการบุคลากร ช่าง และบัญชีผู้ใช้งาน รวมถึงนำเข้าข้อมูลผู้ใช้
-- จัดการคลังวัสดุ อุปกรณ์ และข้อมูลหลักที่ใช้ภายในระบบ
-- จัดการหน้าแรก ข่าวสาร ประกาศ และข้อมูลสถานที่สาธารณะ
-- สร้างรายงาน ส่งออกข้อมูล และแสดงตัวอย่างเอกสาร PDF
-- ตรวจสอบสถานะระบบ Requests, Latency และ Event Loop ผ่านหน้า Performance Monitoring
-- จัดการข้อมูลระบบและหน้า System Maintenance
-
-### ผู้ใช้งานทั่วไป (Public)
-
-- ดูหน้า Landing Page ข่าวสาร ประกาศ วิธีการใช้งาน และข้อมูลติดต่อ
-- ดูตำแหน่งหอพักผ่านหน้าแผนที่และข้อมูลช่องทางติดต่อ
-- แจ้งซ่อมพื้นที่ส่วนกลางโดยไม่ต้องเข้าสู่หน้าของนักศึกษา
-- ติดตามสถานะคำขอแจ้งซ่อมพื้นที่ส่วนกลาง
-
-### ความสามารถส่วนกลาง
-
-- แยกเมนูและหน้าจอตามบทบาทของผู้ใช้งาน
-- ระบบแจ้งเตือน โปรไฟล์ผู้ใช้ และการเปลี่ยนรหัสผ่าน
-- อัปโหลดและดูภาพประกอบการแจ้งซ่อม
-- Search, Filter, Pagination และสถานะ Loading / Empty / Error
-- รองรับ Responsive Layout, Light/Dark Theme และภาษาไทย
-- ใช้ข้อมูลจำลองเพื่อให้ทดลอง Workflow ของทุกบทบาทได้โดยไม่กระทบระบบจริง
-
-## จุดเด่นของผลงาน
-
-- แยกหน้าจอและ navigation ตามบทบาทของผู้ใช้งาน
+- แยก Dashboard, navigation และสิทธิ์การใช้งานตามบทบาท
 - แสดงสถานะงานซ่อมด้วย card, badge และ timeline ที่อ่านง่าย
-- รองรับการทดลอง workflow โดยไม่ต้องเข้าสู่ระบบจริง
-- ออกแบบ Responsive UI สำหรับหน้าจอ desktop และ mobile
-- พัฒนาด้วย React และ Vite พร้อม component ที่นำกลับมาใช้ซ้ำได้
+- รองรับการค้นหา ตัวกรอง การแบ่งหน้า และสถานะ Loading / Empty / Error
+- มีระบบนัดหมาย ปฏิทินงานซ่อม คลังวัสดุ รายงาน และ Performance Monitoring
+- รองรับ Responsive Layout, Light/Dark Theme และภาษาไทย
+- ทดลอง workflow ได้ทันทีด้วยข้อมูลจำลองโดยไม่กระทบระบบจริง
+
+## UI Showcase
+
+### หน้าสาธารณะและหน้าเริ่มต้น
+
+<table>
+  <tr>
+    <td width="50%"><img src="screenshots/landing-page-new.png" alt="RMUTI Dormitory landing page"></td>
+    <td width="50%"><img src="screenshots/landing-page.png" alt="RMUTI Dormitory public landing page"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Landing Page</strong><br>ทางเข้าสู่ระบบและช่องทางแจ้งซ่อม</td>
+    <td align="center"><strong>Public Experience</strong><br>หน้าแนะนำบริการสำหรับผู้ใช้งานทั่วไป</td>
+  </tr>
+</table>
+
+### การใช้งานของนักศึกษา
+
+<table>
+  <tr>
+    <td width="50%"><img src="screenshots/student-dashboard.png" alt="Student repair dashboard"></td>
+    <td width="50%"><img src="screenshots/repair-request-form.png" alt="Student repair request form"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Student Dashboard</strong><br>ภาพรวมคำขอ ห้องพัก และการนัดหมาย</td>
+    <td align="center"><strong>Repair Request</strong><br>แบบฟอร์มแจ้งซ่อมพร้อมรายละเอียดและรูปภาพ</td>
+  </tr>
+</table>
+
+### การติดตามและบริหารงานซ่อม
+
+<table>
+  <tr>
+    <td width="50%"><img src="screenshots/repair-history.png" alt="Repair history and status tracking"></td>
+    <td width="50%"><img src="screenshots/admin-dashboard.png" alt="Admin repair management dashboard"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Repair History</strong><br>ค้นหา กรอง และตรวจสอบงานซ่อมย้อนหลัง</td>
+    <td align="center"><strong>Admin Dashboard</strong><br>สรุปสถานะ แนวโน้ม และประสิทธิภาพการดำเนินงาน</td>
+  </tr>
+</table>
+
+### การดูแลระบบและข้อมูลสถานที่
+
+<table>
+  <tr>
+    <td width="50%"><img src="screenshots/performance-monitoring.png" alt="System performance monitoring"></td>
+    <td width="50%"><img src="screenshots/contact-map.png" alt="Dormitory contact and location map"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Performance Monitoring</strong><br>ติดตาม Requests, Latency และ Event Loop</td>
+    <td align="center"><strong>Contact &amp; Location</strong><br>ข้อมูลติดต่อและแผนที่ตั้งหอพัก</td>
+  </tr>
+</table>
+
+## โครงสร้างการทำงาน
+
+```mermaid
+flowchart LR
+    A[Public User] --> E[React Application]
+    B[Student] --> E
+    C[Technician] --> E
+    D[Admin / Staff] --> E
+    E --> F[Role-based Interface]
+    F --> G[Mock API Layer]
+    G --> H[Synthetic Demo Data]
+```
+
+เดโมแยกประสบการณ์ใช้งานตามบทบาท โดย UI ติดต่อกับ Mock API ภายในเบราว์เซอร์ จึงสาธิตขั้นตอนหลักได้โดยไม่ต้องใช้ backend หรือฐานข้อมูลจริง
 
 ## เทคโนโลยี
 
-`React` · `Vite` · `JavaScript` · `Responsive Web Design` · `GitHub Pages`
+| กลุ่ม | เครื่องมือ |
+|---|---|
+| **Frontend** | React 19, JavaScript, Vite 8 |
+| **Styling & UI** | Tailwind CSS 4, Radix UI, Lucide React, Framer Motion |
+| **Data & Routing** | TanStack Query, React Router |
+| **Deployment** | GitHub Pages |
+| **Demo Data** | In-browser Mock API และข้อมูลสังเคราะห์ |
 
-<h2 align="center">ผู้พัฒนา</h2>
+## ทดลองใช้งาน
 
-<table align="center">
+เปิดเว็บไซต์ได้ที่ **[painter121.github.io/rmuti-dormitory-demo](https://painter121.github.io/rmuti-dormitory-demo/)**
+
+ภายในหน้าเดโมสามารถสลับบทบาทจากแถบ **Live Showcase** เพื่อสำรวจหน้าจอและ workflow ของแต่ละกลุ่มผู้ใช้งานได้ทันที
+
+<div align="center">
+
+## ผู้พัฒนา
+
+<table>
   <tr>
-    <td align="center" valign="middle" width="220">
-      <a href="https://github.com/Painter121"><img src="https://github.com/Painter121.png?size=120" width="100" height="100" alt="Painter121 avatar"><br><br><strong>@Painter121</strong></a>
+    <td align="center" valign="top" width="240">
+      <a href="https://github.com/Painter121">
+        <img src="https://github.com/Painter121.png?size=120" width="110" height="110" alt="Painter121 avatar"><br>
+        <strong>@Painter121</strong>
+      </a>
     </td>
-    <td align="center" valign="middle" width="220">
-      <a href="https://github.com/firstphethay11"><img src="https://github.com/firstphethay11.png?size=120" width="100" height="100" alt="firstphethay11 avatar"><br><br><strong>@firstphethay11</strong></a>
+    <td align="center" valign="top" width="240">
+      <a href="https://github.com/firstphethay11">
+        <img src="https://github.com/firstphethay11.png?size=120" width="110" height="110" alt="firstphethay11 avatar"><br>
+        <strong>@firstphethay11</strong>
+      </a>
     </td>
   </tr>
 </table>
 
-<p align="center">ทั้งสองบัญชีร่วมพัฒนาและดูแลโปรเจกต์นี้</p>
+โปรเจกต์นี้ร่วมกันพัฒนาและดูแลโดยผู้พัฒนาทั้งสองคน
+
+</div>
 
 ---
 
-Demo: **[painter121.github.io/rmuti-dormitory-demo](https://painter121.github.io/rmuti-dormitory-demo/)**
+<div align="center">
+
+**RMUTI Dormitory System — Interactive Frontend Showcase**
+
+</div>
