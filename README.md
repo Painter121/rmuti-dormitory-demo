@@ -74,4 +74,4 @@ RMUTI Dormitory System เป็น Interactive Frontend Showcase สำหร�
 
 ---
 
-ทดลองใช้งาน: **[painter121.github.io/rmuti-dormitory-demo](https://painter121.github.io/rmuti-dormitory-demo/)**
+Demo: **[painter121.github.io/rmuti-dormitory-demo](https://painter121.github.io/rmuti-dormitory-demo/)**
