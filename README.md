@@ -11,4 +11,11 @@
 
 *หมายเหตุ: ข้อมูลทั้งหมดในเดโมนี้เป็นข้อมูลจำลองเพื่อการสาธิตการทำงานและนำเสนอผลงานทางด้านหน้าบ้าน (Frontend UI & Interaction) โดยไม่มีการเชื่อมต่อฐานข้อมูลหรือเซิร์ฟเวอร์จริง*
 
+## ผู้พัฒนา
+
+โปรเจกต์นี้เป็นผลงานที่พัฒนาและดูแลร่วมกันโดย:
+
+- [Phuriphat Malison (@Painter121)](https://github.com/Painter121)
+- [@firstphethay11](https://github.com/firstphethay11)
+
 🌐 **เข้าชมเว็บไซต์**: [https://painter121.github.io/rmuti-dormitory-demo/](https://painter121.github.io/rmuti-dormitory-demo/)
