@@ -2,7 +2,7 @@ import { a as e } from "./rolldown-runtime-CNC7AqOf.js";
 import { d as t } from "./vendor-dnd-CCxL00r4.js";
 import { d as n, f as r } from "./vendor-react-BijskWJh.js";
 import { a as i } from "./vendor-framer-DXE0nwZD.js";
-import { h as d, m as f, p } from "./index-BrdXBQjQ.js";
+import { h as d, m as f, p } from "./index-v5.js";
 
 var m = e(t(), 1);
 var h = i();
@@ -111,7 +111,7 @@ function DemoShowcaseBar() {
     }
   }, [loc.pathname]);
 
-  // ซิงค์ CSS และ layout offset แบบ Dynamic ทั้ง desktop (md:fixed) และ mobile (paddingTop)
+  // ซิงค์ CSS และ layout offset แบบ Dynamic ดัน Navbar ลงมาให้พอดีเป๊ะ ไม่ทับ Navbar
   (0, m.useEffect)(function() {
     var styleId = "rmuti-demo-bar-style-fix";
     var styleEl = document.getElementById(styleId);
@@ -125,9 +125,9 @@ function DemoShowcaseBar() {
       var height = 0;
       if (!isClosed) {
         if (asideRef.current) {
-          height = asideRef.current.offsetHeight || (isCollapsed ? 36 : 76);
+          height = asideRef.current.offsetHeight || (isCollapsed ? 39 : 76);
         } else {
-          height = isCollapsed ? 36 : 76;
+          height = isCollapsed ? 39 : 76;
         }
       }
 
@@ -141,7 +141,7 @@ function DemoShowcaseBar() {
         '@media (max-width: 767px) {',
         '  body { padding-top: var(--demo-bar-height, 0px) !important; }',
         '}',
-        'header.sticky { top: var(--demo-bar-height, 0px) !important; }'
+        'header.sticky, header.absolute, header { top: 0px !important; }'
       ].join('\n');
 
       var layoutNodes = document.querySelectorAll('.md\\:fixed.md\\:inset-0, [class*="md:fixed"][class*="md:inset-0"]');
@@ -151,7 +151,7 @@ function DemoShowcaseBar() {
     };
 
     updateLayoutOffset();
-    var timer = setTimeout(updateLayoutOffset, 60);
+    var timer = setTimeout(updateLayoutOffset, 50);
 
     var observer = null;
     if (typeof ResizeObserver !== "undefined" && asideRef.current) {
@@ -173,7 +173,7 @@ function DemoShowcaseBar() {
           '@media (max-width: 767px) {',
           '  body { padding-top: 0px !important; }',
           '}',
-          'header.sticky { top: 0px !important; }'
+          'header.sticky, header.absolute, header { top: 0px !important; }'
         ].join('\n');
 
         var layoutNodes = document.querySelectorAll('.md\\:fixed.md\\:inset-0, [class*="md:fixed"][class*="md:inset-0"]');
