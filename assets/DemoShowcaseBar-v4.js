@@ -2,7 +2,7 @@ import { a as e } from "./rolldown-runtime-CNC7AqOf.js";
 import { d as t } from "./vendor-dnd-CCxL00r4.js";
 import { d as n, f as r } from "./vendor-react-BijskWJh.js";
 import { a as i } from "./vendor-framer-DXE0nwZD.js";
-import { h as d, m as f, p } from "./index-v5.js";
+import { h as d, m as f, p } from "./index-v6.js";
 
 var m = e(t(), 1);
 var h = i();
@@ -69,6 +69,37 @@ var CATEGORIES = [
   }
 ];
 
+// Chevron Icons (Up / Down)
+function IconChevronUp(props) {
+  return (0, h.jsx)("svg", {
+    className: props.className || "w-5 h-5",
+    fill: "none",
+    stroke: "currentColor",
+    viewBox: "0 0 24 24",
+    children: (0, h.jsx)("path", {
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      strokeWidth: "2.5",
+      d: "M5 15l7-7 7 7"
+    })
+  });
+}
+
+function IconChevronDown(props) {
+  return (0, h.jsx)("svg", {
+    className: props.className || "w-5 h-5",
+    fill: "none",
+    stroke: "currentColor",
+    viewBox: "0 0 24 24",
+    children: (0, h.jsx)("path", {
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      strokeWidth: "2.5",
+      d: "M19 9l-7 7-7-7"
+    })
+  });
+}
+
 function DemoShowcaseBar() {
   var nav = r();
   var loc = n();
@@ -83,16 +114,6 @@ function DemoShowcaseBar() {
   });
   var isClosed = isClosedState[0];
   var setIsClosed = isClosedState[1];
-
-  var isCollapsedState = (0, m.useState)(function() {
-    try {
-      return localStorage.getItem("rmuti_demo_bar_collapsed") === "true";
-    } catch(e) {
-      return false;
-    }
-  });
-  var isCollapsed = isCollapsedState[0];
-  var setIsCollapsed = isCollapsedState[1];
 
   var activeCatState = (0, m.useState)(d.STUDENT);
   var activeCatId = activeCatState[0];
@@ -125,9 +146,9 @@ function DemoShowcaseBar() {
       var height = 0;
       if (!isClosed) {
         if (asideRef.current) {
-          height = asideRef.current.offsetHeight || (isCollapsed ? 39 : 76);
+          height = asideRef.current.offsetHeight || 86;
         } else {
-          height = isCollapsed ? 39 : 76;
+          height = 86;
         }
       }
 
@@ -136,7 +157,7 @@ function DemoShowcaseBar() {
       styleEl.innerHTML = [
         ':root { --demo-bar-height: ' + height + 'px; }',
         '@media (min-width: 768px) {',
-        '  .md\\:fixed.md\\:inset-0, [class*="md:fixed"][class*="md:inset-0"] { top: var(--demo-bar-height, 0px) !important; }',
+        '  .md\\:fixed.md\\:inset-0, [class*="md:fixed"][class*="md:inset-0"] { top: var(--demo-bar-height, 0px) !important; transition: top 0.2s ease-out; }',
         '}',
         '@media (max-width: 767px) {',
         '  body { padding-top: var(--demo-bar-height, 0px) !important; }',
@@ -183,14 +204,7 @@ function DemoShowcaseBar() {
         document.documentElement.style.removeProperty('--demo-bar-height');
       }
     };
-  }, [isClosed, isCollapsed, loc.pathname]);
-
-  var handleToggleCollapse = function(nextVal) {
-    setIsCollapsed(nextVal);
-    try {
-      localStorage.setItem("rmuti_demo_bar_collapsed", String(nextVal));
-    } catch(e) {}
-  };
+  }, [isClosed, loc.pathname]);
 
   var handleToggleClosed = function(nextVal) {
     setIsClosed(nextVal);
@@ -224,7 +238,7 @@ function DemoShowcaseBar() {
   var currentCat = CATEGORIES.find(function(c) { return c.id === activeCatId; }) || CATEGORIES[0];
   var currentScreen = currentCat.screens.find(function(s) { return s.path === loc.pathname; }) || currentCat.screens[0];
 
-  // กรณีผู้ใช้กดปิดแถบเดโม: แสดงปุ่มลอยขนาดกะทัดรัดที่มุมขวาล่าง
+  // กรณีผู้ใช้กดปิดแถบเดโม: แสดงปุ่มแท็บลูกศรลง [▼] ที่กึ่งกลางด้านบน เพื่อให้กดเลื่อนเปิดลงมาได้
   if (isClosed) {
     return (0, h.jsxs)("button", {
       type: "button",
@@ -232,110 +246,31 @@ function DemoShowcaseBar() {
       style: {
         backgroundColor: "#0f172a",
         borderColor: "#334155",
-        color: "#f8fafc",
-        boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5)"
+        boxShadow: "0 4px 14px rgba(0, 0, 0, 0.45)"
       },
-      className: "fixed bottom-4 right-4 z-50 flex items-center gap-2 px-3.5 py-2 rounded-full border text-xs font-bold transition hover:bg-slate-800 hover:border-orange-500",
-      title: "คลิกเพื่อเปิดแถบเมนู Live Demo",
+      className: "fixed top-0 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1.5 px-3 py-1 sm:px-4 sm:py-1.5 rounded-b-lg border border-t-0 hover:bg-slate-800 transition cursor-pointer group",
+      title: "เลื่อนเปิดแถบเดโม (Slide Down)",
+      "aria-label": "เลื่อนเปิดแถบเดโม",
       children: [
         (0, h.jsx)("span", {
-          className: "w-2 h-2 rounded-full bg-orange-500",
-          "aria-hidden": "true"
+          className: "text-[10px] sm:text-xs font-bold text-slate-400 group-hover:text-slate-200",
+          children: "DEMO"
         }),
-        (0, h.jsx)("span", {
-          children: "เปิดแถบเดโม"
+        (0, h.jsx)(IconChevronDown, {
+          className: "w-3.5 h-3.5 sm:w-4 sm:h-4 text-orange-400 group-hover:translate-y-0.5 transition-transform"
         })
       ]
     });
   }
 
-  // โหมดย่อ (Collapsed) - อยู่เหนือ Navbar สะอาด กระชับ แถวเดียว ไม่เกะกะ
-  if (isCollapsed) {
-    return (0, h.jsx)("aside", {
-      ref: asideRef,
-      className: "fixed top-0 left-0 right-0 z-50 text-white shadow-md font-sans",
-      style: { backgroundColor: "#0f172a", borderBottom: "1px solid #334155" },
-      "aria-label": "แถบควบคุม Live Demo (โหมดย่อ)",
-      children: (0, h.jsxs)("div", {
-        className: "mx-auto flex max-w-7xl items-center justify-between px-3 py-1.5 text-xs sm:px-4 gap-2",
-        children: [
-          (0, h.jsxs)("div", {
-            className: "flex items-center gap-2 min-w-0",
-            children: [
-              (0, h.jsx)("span", {
-                className: "px-2 py-0.5 rounded text-[11px] font-bold text-orange-400 bg-orange-950 border border-orange-600 shrink-0",
-                children: "LIVE DEMO"
-              }),
-              (0, h.jsxs)("div", {
-                className: "flex items-center gap-1.5 text-xs truncate text-slate-200",
-                children: [
-                  (0, h.jsx)("span", {
-                    style: { color: currentCat.activeColor, fontWeight: "bold" },
-                    children: currentCat.label
-                  }),
-                  (0, h.jsx)("span", { className: "text-slate-500", children: "/" }),
-                  (0, h.jsx)("span", {
-                    className: "text-slate-300 truncate",
-                    children: currentScreen ? currentScreen.name : "หน้าหลัก"
-                  })
-                ]
-              })
-            ]
-          }),
-          (0, h.jsxs)("div", {
-            className: "flex items-center gap-1 shrink-0 overflow-x-auto",
-            children: [
-              (0, h.jsx)("div", {
-                className: "hidden sm:flex items-center gap-1",
-                children: CATEGORIES.map(function(cat) {
-                  var isActive = currentCat.id === cat.id;
-                  return (0, h.jsx)("button", {
-                    key: cat.id,
-                    type: "button",
-                    onClick: function() { handleCategorySelect(cat); },
-                    style: isActive ? {
-                      backgroundColor: cat.activeColor,
-                      color: "#ffffff",
-                      fontWeight: "bold"
-                    } : {
-                      backgroundColor: "#1e293b",
-                      color: "#94a3b8",
-                      border: "1px solid #334155"
-                    },
-                    className: "px-2 py-0.5 rounded text-[11px] transition hover:text-white shrink-0",
-                    children: cat.label
-                  });
-                })
-              }),
-              (0, h.jsx)("button", {
-                type: "button",
-                onClick: function() { handleToggleCollapse(false); },
-                className: "px-2.5 py-1 rounded bg-orange-600 hover:bg-orange-500 text-xs font-bold text-white transition shrink-0",
-                children: "ขยายแถบเมนู ▾"
-              }),
-              (0, h.jsx)("button", {
-                type: "button",
-                onClick: function() { handleToggleClosed(true); },
-                style: { backgroundColor: "#1e293b", color: "#94a3b8", border: "1px solid #334155" },
-                className: "px-2 py-1 rounded text-xs font-semibold hover:bg-rose-900 hover:text-white hover:border-rose-700 transition shrink-0 ml-0.5",
-                title: "ปิดแถบเดโมนี้",
-                children: "✕ ปิด"
-              })
-            ]
-          })
-        ]
-      })
-    });
-  }
-
-  // โหมดขยาย (Expanded) - อยู่เหนือ Navbar พื้นหลังทึบ 100% ไม่ทับ Navbar และปิดได้
+  // โหมดเปิด (Open) - พื้นหลังทึบ 100% ไม่ทับ Navbar และมีไอคอนลูกศรขึ้น [▲] เลื่อนปิด
   return (0, h.jsxs)("aside", {
     ref: asideRef,
     className: "fixed top-0 left-0 right-0 z-50 text-white shadow-xl font-sans",
     style: { backgroundColor: "#0f172a", borderBottom: "1px solid #334155" },
     "aria-label": "แถบควบคุม Live Demo Showcase",
     children: [
-      // แถวที่ 1: ตราสถานะ + ปุ่มเลือกหมวดหมู่ + ปุ่มย่อแถบ + ปุ่มปิด
+      // แถวที่ 1: ตราสถานะ + ปุ่มเลือกหมวดหมู่ + ไอคอนลูกศรขึ้น [▲] เลื่อนปิด
       (0, h.jsxs)("div", {
         className: "mx-auto flex max-w-7xl items-center justify-between px-3 py-1.5 sm:py-2 text-xs sm:px-4 gap-2",
         children: [
@@ -375,20 +310,17 @@ function DemoShowcaseBar() {
                   children: cat.label
                 });
               }),
-              (0, h.jsx)("button", {
-                type: "button",
-                onClick: function() { handleToggleCollapse(true); },
-                style: { backgroundColor: "#1e293b", border: "1px solid #475569", color: "#cbd5e1" },
-                className: "px-2 sm:px-2.5 py-1 sm:py-1.5 rounded-md text-xs font-semibold transition hover:text-white hover:bg-slate-700 shrink-0 ml-0.5",
-                children: "ย่อแถบ ▴"
-              }),
+              // ไอคอนลูกศรขึ้น [▲] เลื่อนเปิด/ปิด
               (0, h.jsx)("button", {
                 type: "button",
                 onClick: function() { handleToggleClosed(true); },
                 style: { backgroundColor: "#1e293b", border: "1px solid #475569", color: "#cbd5e1" },
-                className: "px-2 sm:px-2.5 py-1 sm:py-1.5 rounded-md text-xs font-semibold hover:bg-rose-900 hover:text-white hover:border-rose-700 transition shrink-0 ml-0.5",
-                title: "ปิดแถบเดโมนี้",
-                children: "✕ ปิด"
+                className: "flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-md text-xs transition hover:text-white hover:bg-slate-700 hover:border-slate-500 shrink-0 ml-1 cursor-pointer group",
+                title: "เลื่อนปิดแถบเดโม (Slide Up)",
+                "aria-label": "เลื่อนปิดแถบเดโม",
+                children: (0, h.jsx)(IconChevronUp, {
+                  className: "w-4 h-4 sm:w-5 sm:h-5 group-hover:-translate-y-0.5 transition-transform"
+                })
               })
             ]
           })
