@@ -2,7 +2,7 @@ import { a as e } from "./rolldown-runtime-CNC7AqOf.js";
 import { d as t } from "./vendor-dnd-CCxL00r4.js";
 import { d as n, f as r } from "./vendor-react-BijskWJh.js";
 import { a as i } from "./vendor-framer-DXE0nwZD.js";
-import { h as d, m as f, p } from "./index-v6.js";
+import { h as d, m as f, p } from "./index-v7.js";
 
 var m = e(t(), 1);
 var h = i();
@@ -69,7 +69,6 @@ var CATEGORIES = [
   }
 ];
 
-// Chevron Icons (Up / Down)
 function IconChevronUp(props) {
   return (0, h.jsx)("svg", {
     className: props.className || "w-5 h-5",
@@ -105,13 +104,8 @@ function DemoShowcaseBar() {
   var loc = n();
   var asideRef = (0, m.useRef)(null);
 
-  var isClosedState = (0, m.useState)(function() {
-    try {
-      return localStorage.getItem("rmuti_demo_bar_closed") === "true";
-    } catch(e) {
-      return false;
-    }
-  });
+  // ค่าเริ่มต้นเป็น false เสมอ เพื่อให้ผู้ใช้เปิดเข้ามาแล้วเห็นแถบและปุ่มลูกศรทันที
+  var isClosedState = (0, m.useState)(false);
   var isClosed = isClosedState[0];
   var setIsClosed = isClosedState[1];
 
@@ -157,10 +151,10 @@ function DemoShowcaseBar() {
       styleEl.innerHTML = [
         ':root { --demo-bar-height: ' + height + 'px; }',
         '@media (min-width: 768px) {',
-        '  .md\\:fixed.md\\:inset-0, [class*="md:fixed"][class*="md:inset-0"] { top: var(--demo-bar-height, 0px) !important; transition: top 0.2s ease-out; }',
+        '  .md\\:fixed.md\\:inset-0, [class*="md:fixed"][class*="md:inset-0"] { top: var(--demo-bar-height, 0px) !important; transition: top 0.25s ease-out; }',
         '}',
         '@media (max-width: 767px) {',
-        '  body { padding-top: var(--demo-bar-height, 0px) !important; }',
+        '  body { padding-top: var(--demo-bar-height, 0px) !important; transition: padding-top 0.25s ease-out; }',
         '}',
         'header.sticky, header.absolute, header { top: 0px !important; }'
       ].join('\n');
@@ -208,9 +202,6 @@ function DemoShowcaseBar() {
 
   var handleToggleClosed = function(nextVal) {
     setIsClosed(nextVal);
-    try {
-      localStorage.setItem("rmuti_demo_bar_closed", String(nextVal));
-    } catch(e) {}
     if (!nextVal) {
       try {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -238,32 +229,54 @@ function DemoShowcaseBar() {
   var currentCat = CATEGORIES.find(function(c) { return c.id === activeCatId; }) || CATEGORIES[0];
   var currentScreen = currentCat.screens.find(function(s) { return s.path === loc.pathname; }) || currentCat.screens[0];
 
-  // กรณีผู้ใช้กดปิดแถบเดโม: แสดงปุ่มแท็บลูกศรลง [▼] ที่กึ่งกลางด้านบน เพื่อให้กดเลื่อนเปิดลงมาได้
+  // กรณีผู้ใช้กดปิดแถบเดโม: แสดงปุ่มแท็บลูกศรลง [▼] ที่มุมขวาบนและกึ่งกลาง เพื่อให้กดเลื่อนเปิดลงมาได้ง่ายๆ
   if (isClosed) {
-    return (0, h.jsxs)("button", {
-      type: "button",
-      onClick: function() { handleToggleClosed(false); },
-      style: {
-        backgroundColor: "#0f172a",
-        borderColor: "#334155",
-        boxShadow: "0 4px 14px rgba(0, 0, 0, 0.45)"
-      },
-      className: "fixed top-0 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1.5 px-3 py-1 sm:px-4 sm:py-1.5 rounded-b-lg border border-t-0 hover:bg-slate-800 transition cursor-pointer group",
-      title: "เลื่อนเปิดแถบเดโม (Slide Down)",
-      "aria-label": "เลื่อนเปิดแถบเดโม",
+    return (0, h.jsxs)("div", {
       children: [
-        (0, h.jsx)("span", {
-          className: "text-[10px] sm:text-xs font-bold text-slate-400 group-hover:text-slate-200",
-          children: "DEMO"
+        // ปุ่มแท็บมุมขวาบน (ตำแหน่งเดิมที่กดปิด)
+        (0, h.jsx)("button", {
+          type: "button",
+          onClick: function() { handleToggleClosed(false); },
+          style: {
+            backgroundColor: "#0f172a",
+            borderColor: "#334155",
+            color: "#f97316",
+            boxShadow: "0 6px 16px rgba(0, 0, 0, 0.45)"
+          },
+          className: "fixed top-0 right-4 z-50 flex items-center justify-center w-9 h-7 sm:w-10 sm:h-8 rounded-b-lg border border-t-0 hover:bg-slate-800 hover:text-orange-300 transition cursor-pointer group",
+          title: "เลื่อนเปิดแถบเดโม (Slide Down)",
+          "aria-label": "เลื่อนเปิดแถบเดโม",
+          children: (0, h.jsx)(IconChevronDown, {
+            className: "w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-y-0.5 transition-transform"
+          })
         }),
-        (0, h.jsx)(IconChevronDown, {
-          className: "w-3.5 h-3.5 sm:w-4 sm:h-4 text-orange-400 group-hover:translate-y-0.5 transition-transform"
+        // แท็บกึ่งกลางด้านบน [DEMO ▼]
+        (0, h.jsxs)("button", {
+          type: "button",
+          onClick: function() { handleToggleClosed(false); },
+          style: {
+            backgroundColor: "#0f172a",
+            borderColor: "#334155",
+            boxShadow: "0 4px 14px rgba(0, 0, 0, 0.45)"
+          },
+          className: "fixed top-0 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1.5 px-3 py-1 sm:px-4 sm:py-1.5 rounded-b-lg border border-t-0 hover:bg-slate-800 transition cursor-pointer group",
+          title: "เลื่อนเปิดแถบเดโม (Slide Down)",
+          "aria-label": "เลื่อนเปิดแถบเดโม",
+          children: [
+            (0, h.jsx)("span", {
+              className: "text-[10px] sm:text-xs font-bold text-slate-400 group-hover:text-slate-200",
+              children: "DEMO"
+            }),
+            (0, h.jsx)(IconChevronDown, {
+              className: "w-3.5 h-3.5 sm:w-4 sm:h-4 text-orange-400 group-hover:translate-y-0.5 transition-transform"
+            })
+          ]
         })
       ]
     });
   }
 
-  // โหมดเปิด (Open) - พื้นหลังทึบ 100% ไม่ทับ Navbar และมีไอคอนลูกศรขึ้น [▲] เลื่อนปิด
+  // โหมดเปิด (Open) - พื้นหลังทึบ 100% ดัน Navbar ลงมา และมีไอคอนลูกศรขึ้น [▲] เลื่อนปิด
   return (0, h.jsxs)("aside", {
     ref: asideRef,
     className: "fixed top-0 left-0 right-0 z-50 text-white shadow-xl font-sans",
